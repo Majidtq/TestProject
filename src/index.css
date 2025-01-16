@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+}
+
+.comic-box {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  border-radius: 8px;
+  transform: perspective(1000px) rotateX(10deg) rotateY(-10deg);
+  box-shadow: 0 2px 0 #b17300, 0 4px 0 #804f00, 0 8px 16px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+}
+
+.comic-box:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-1px);
+}
+
+.comic-box.green {
+  background: linear-gradient(135deg, #00ff87, #60efff);
+  box-shadow: 0 2px 0 #00b85f, 0 4px 0 #008046, 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.comic-box::before {
+  content: "";
+  position: absolute;
+  inset: -50% -50% 150% -50%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 70%
+  );
+  animation: shine 3s infinite;
+  transform: rotate(25deg);
+}
+
+@keyframes shine {
+  0% {
+    transform: translateY(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateY(100%) rotate(25deg);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
