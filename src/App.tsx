@@ -55,7 +55,7 @@ function App() {
       <div
         className="bg-cover bg-center bg-fixed relative overflow-hidden"
         style={{
-          backgroundImage: `url('src/FINAL.jpg')`,
+          backgroundImage: `url('/FINAL.jpg')`,
           backgroundBlendMode: "overlay",
           height: "calc(100vh - 40px)", // Full screen minus ticker height
         }}
